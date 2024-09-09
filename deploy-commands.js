@@ -44,7 +44,7 @@ const rest = new REST().setToken(token);
 		// 	{ body: commands }
 		// );
 
-		await rest.put(Routes.applicationCommands(clientId), {
+		const data = await rest.put(Routes.applicationCommands(clientId), {
 			body: commands,
 		});
 
