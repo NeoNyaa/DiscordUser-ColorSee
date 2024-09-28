@@ -17,7 +17,9 @@ module.exports = {
 				.setRequired(true)
 				.setMaxLength(6)
 				.setMinLength(6)
-		),
+		)
+		.setIntegrationTypes([0, 1]) // Both of these are needed to allow for the bot to function both in guilds and in DMs the bot is not part of.
+		.setContexts([0, 1, 2]), // Both of these are needed to allow for the bot to function both in guilds and in DMs the bot is not part of.
 	async execute(interaction) {
 		// Create a blank 2d canvas that is 100 pixels in width and height.
 		const canvas = Canvas.createCanvas(100, 100);
